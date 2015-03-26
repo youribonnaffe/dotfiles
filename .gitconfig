@@ -1,0 +1,22 @@
+[user]
+	email = youri.bonnaffe@activeeon.com
+	name = youribonnaffe
+[color]
+	ui = true
+[alias]
+    st = status
+	ci = commit
+    co = checkout
+    sdiff = diff --staged 
+    lg= log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --graph --all
+    rh = reset HEAD 
+    sp = stash pop
+    sta = stash
+    sl = stash list
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+[push]
+	default = upstream
+[help]
+	autocorrect = 10

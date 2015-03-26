@@ -1,0 +1,63 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias v="vim"
+
+alias g="git"
+alias up="rgit fetch --all"
+
+alias gr="gradle"
+
+
+
+alias ack="ack-grep --color-filename=blue  --color-lineno=magenta"
+alias ghist="history | grep $*"
+alias lhead="ls -tl | head"
+alias pg="pgrep -fl "
+alias json="python -mjson.tool"
+alias agi="sudo apt-get install"
+alias psj="pg java | alternate"
+alias kpa="pg java | grep rmi | cut -f1 -d\" \" | xargs kill -9"
+alias tiga="tig --all"
+alias k9="kill -9"
+alias tnode="ls -rt Node* | tail -n 1|xargs less +F"
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+function sshp {
+ sshpass -p "password" ssh -oStrictHostKeyChecking=no $*
+}
+
+function mcd() {
+  mkdir -p "$1" && cd "$1";
+}
+
+
+function try(){
+    until $($*)
+    do
+      echo "Try again in a few moment..."
+      sleep 3
+    done
+}
+
+function acs(){
+    apt-cache search $* | grep -E "$*|$"
+}
+
+http () { sudo python -mSimpleHTTPServer $1 ;}
