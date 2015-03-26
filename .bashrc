@@ -110,5 +110,5 @@ export PATH="$HOME/.jenv/bin:$PATH"
 export PATH=$PATH:~/tools/scripts
 export PATH=$PATH:~/tools/apache-maven-3.2.1/bin/
 
-. ~/.z.sh
-. ~/.gitconfig/aliases
+. ~/.dotfiles/.z.sh
+. ~/.dotfiles/aliases
