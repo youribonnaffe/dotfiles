@@ -1,22 +1,24 @@
 [user]
-	email = youri.bonnaffe@activeeon.com
-	name = youribonnaffe
+	email = youri.bonnaffe@instant-system.com
+	name = Youri Bonnaffe
 [color]
 	ui = true
 [alias]
     st = status
-	ci = commit
+	ci = commit --verbose
     co = checkout
     sdiff = diff --staged 
-    lg= log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --graph --all
+    lg= log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=local --graph --all
     rh = reset HEAD 
     sp = stash pop
     sta = stash
     sl = stash list
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/youri/.gitignore_global
 	editor = vim
 [push]
 	default = upstream
 [help]
 	autocorrect = 10
+[pull]
+	rebase = true
