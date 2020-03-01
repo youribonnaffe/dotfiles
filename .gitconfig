@@ -1,24 +1,34 @@
 [user]
-	email = youri.bonnaffe@instant-system.com
 	name = Youri Bonnaffe
 [color]
 	ui = true
 [alias]
     st = status
 	ci = commit --verbose
+	cia = commit --amend
     co = checkout
+    f = fetch origin master -n
     sdiff = diff --staged 
     lg= log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=local --graph --all
     rh = reset HEAD 
     sp = stash pop
     sta = stash
     sl = stash list
+    ppull = pull --rebase=false
+    a = add
+    ap = add -p
+    lb = branch --sort=-committerdate
 [core]
 	excludesfile = /Users/youri/.gitignore_global
 	editor = vim
 [push]
-	default = upstream
+	default = current
+	followTags = true
 [help]
 	autocorrect = 10
 [pull]
 	rebase = true
+[rebase]
+	autostash = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

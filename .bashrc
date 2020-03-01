@@ -46,7 +46,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\w\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}:\w\$ '
 fi
@@ -75,12 +75,6 @@ fi
 
 export LESS=" -R "
 
-test -e ~/tools/jdk && export JAVA_HOME=~/tools/jdk
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
- [[ -s "/home/youri/.gvm/bin/gvm-init.sh" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "/home/youri/.gvm/bin/gvm-init.sh"
-
-
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
 shopt -s histappend
@@ -105,11 +99,11 @@ export LESS_TERMCAP_ue=$'\E[0m'          # end underline
 export LESS_TERMCAP_us=$'\E[01;32m'      # begin underline
 
 
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH=$PATH:~/tools/scripts
-export PATH=$PATH:~/tools/apache-maven-3.2.1/bin/
-
-. ~/.dotfiles/.z.sh
 . ~/.dotfiles/aliases
 
 export LS_COLORS="${LS_COLORS}ex=1;35:"
+
+shopt -s checkwinsize
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
